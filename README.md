@@ -1,3 +1,4 @@
 # housepoints
-Testing Commits
+PHP to display housepoints for school
+
 
