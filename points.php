@@ -98,6 +98,19 @@ $tto = $conn->query($sql);
 $sql = "SELECT SUM(IFNULL(Monday, 0) + IFNULL(Tuesday, 0) + IFNULL(Thursday, 0) + IFNULL(Other, 0)) AS termtotal from white ";
 $ttw = $conn->query($sql);
 
+//Total Year for White
+$sql = "SELECT SUM(IFNULL(total, 0)) AS yeartotal from white ";
+$tyw = $conn->query($sql);
+
+
+//Total Year for blue
+$sql = "SELECT SUM(IFNULL(total, 0)) AS yeartotal from blue ";
+$tyb = $conn->query($sql);
+
+//Total Year for orange
+$sql = "SELECT SUM(IFNULL(total, 0)) AS yeartotal from orange ";
+$tyo = $conn->query($sql);
+
     
 echo '<table  style="width:33%; float: left">
     <tr>
@@ -154,16 +167,28 @@ echo '<tr>
           <td> &nbsp</td>
         </tr>
           <tr>
-          <th colspan="2">Term Total White</th>
+          <th colspan="2">Current Term Total White</th>
             <td>&nbsp </td>
             <td>&nbsp </td>
             <td>&nbsp</td>
-            <th style="background-color:#15e623">'; if ($ttw->num_rows > 0) { //prints term total for white
+           <th style="background-color:#15e623">'; if ($ttw->num_rows > 0) { //prints term total for white
                       while($row = $ttw->fetch_assoc()) {
                           echo  $row["termtotal"]; 
                       }
                   }; 
-      echo '</thd></tr></table>';
+      echo '</thd></tr>
+      <tr>
+      <th colspan="2">Yearly Total White</th>
+        <td>&nbsp </td>
+        <td>&nbsp </td>
+        <td>&nbsp</td>
+        <th style="background-color:#15e623">'; if ($tyw->num_rows > 0) { //prints tyear total for white
+                  while($row = $tyw->fetch_assoc()) {
+                      echo  $row["yeartotal"]; 
+                  }
+              }; 
+  echo '</thd></tr>
+     </table>';
 
 echo '<table style="width:33%; float: left">
   <tr>
@@ -221,7 +246,7 @@ echo '<table style="width:33%; float: left">
         </tr>
           <tr>
          
-        <th colspan="2">Term Total Blue</th>
+        <th colspan="2">Current Term Total Blue</th>
             <td>&nbsp </td>
             <td>&nbsp </td>
             <td>&nbsp</td>
@@ -230,7 +255,22 @@ echo '<table style="width:33%; float: left">
                   echo  $row["termtotal"]; 
               }
           }; 
-echo '</th></tr></table>';
+echo '</th></tr>
+<tr>
+        <th colspan="2">Yearly Total Blue</th>
+          <td>&nbsp </td>
+          <td>&nbsp </td>
+          <td>&nbsp</td>
+          <th style="background-color:#15e623">'; if ($tyb->num_rows > 0) { //prints year total form blue
+            while($row = $tyb->fetch_assoc()) {
+                echo  $row["yeartotal"]; 
+              }
+            }; 
+
+ echo '</thd>
+      </tr>
+
+</table>';
 
 
   echo '<table style="width:33%; float: left">
@@ -290,7 +330,7 @@ echo' </tr>
       </tr>
         <tr>
         
-      <th colspan="2">Term Total Orange</th>
+      <th colspan="2">Current Term Total Orange</th>
             <td>&nbsp </td>
             <td>&nbsp </td>
             <td>&nbsp</td>
@@ -301,7 +341,22 @@ echo' </tr>
           }; 
 
 // input boxes......below       
-echo '</th></tr></table>
+echo '</th></tr>
+        <tr>
+        <th colspan="2">Yearly Total orange</th>
+          <td>&nbsp </td>
+          <td>&nbsp </td>
+          <td>&nbsp</td>
+          <th style="background-color:#15e623">'; if ($tyo->num_rows > 0) { //prints year total for orange
+            while($row = $tyo->fetch_assoc()) {
+                echo  $row["yeartotal"];     
+                
+              }
+            }; 
+ echo '</thd>
+      </tr>
+
+</table>
 
 <table>
   <tr>
@@ -405,6 +460,18 @@ echo '</th></tr></table>
 </select>
 
 <input type="submit" name="deleteterm">
+</form>
+
+<form method="post" action="process.php">
+
+<label for="Delete_term_data">Delete year total:</label>
+<select name="Delete_points_house_year" id="Delete_points_house_year">
+  <option value="white">White</option>
+  <option value="blue">Blue</option>
+  <option value="orange">Orange</option>
+</select>
+
+<input type="submit" name="deleteyear">
 </form>
             </td>
             </tr>

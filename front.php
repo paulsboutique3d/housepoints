@@ -45,6 +45,19 @@ $tto = $conn->query($sql);
 $sql = "SELECT SUM(IFNULL(Monday, 0) + IFNULL(Tuesday, 0) + IFNULL(Thursday, 0) + IFNULL(Other, 0)) AS termtotal from white ";
 $ttw = $conn->query($sql);
 
+//Total Year for White
+$sql = "SELECT SUM(IFNULL(total, 0)) AS yeartotal from white ";
+$tyw = $conn->query($sql);
+
+
+//Total Year for blue
+$sql = "SELECT SUM(IFNULL(total, 0)) AS yeartotal from blue ";
+$tyb = $conn->query($sql);
+
+//Total Year for orange
+$sql = "SELECT SUM(IFNULL(total, 0)) AS yeartotal from orange ";
+$tyo = $conn->query($sql);
+
 
 
 echo '
@@ -63,22 +76,22 @@ echo '
 <tr >
 <td style="width: 33%; background-color: orange; height: 45%;"><h2 style="text-align: center;"><span style="color: #ffffff;"><strong>';
 if ($tto->num_rows > 0) {  //prints term total for orange
-    while($row = $tto->fetch_assoc()) {
-        echo  $row["termtotal"]; 
+    while($row = $tyo->fetch_assoc()) {
+        echo  $row["yeartotal"]; 
     }
 }; 
 echo '</strong></h2></td>
 <td style="width: 33%; height: 45%;"><h2 style="text-align: center; "><span style="color: #000000;"><strong>';
 if ($ttb->num_rows > 0) { //prints term total for white
-    while($row = $ttw->fetch_assoc()) {
-        echo  $row["termtotal"]; 
+    while($row = $tyw->fetch_assoc()) {
+        echo  $row["yeartotal"]; 
     }
 }; 
 echo '</strong></h2></td>
 <td style="width: 33%; height: 45%; background-color: #003366;"><h2 style="text-align: center;"><span style="color: #ffffff;"><strong>'; 
 if ($ttb->num_rows > 0) { //prints term total for blue
-    while($row = $ttb->fetch_assoc()) {
-        echo  $row["termtotal"]; 
+    while($row = $tyb->fetch_assoc()) {
+        echo  $row["yeartotal"]; 
     }
 }; 
 echo '</strong></h2></td>
