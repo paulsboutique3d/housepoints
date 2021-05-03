@@ -10,9 +10,8 @@ if(isset($_POST['save']))
 	 $sql = "UPDATE $Add_points_house 
 	 		SET $Add_points_day = coalesce($Add_points_day, $points) ,
 			 total = coalesce(total, 0) + $points  
-			
-			WHERE Week = $Add_points_weeks" ;
-	
+			WHERE Week = $Add_points_weeks
+				AND ISNULL($Add_points_day) " ;
 
 	 if (mysqli_query($conn, $sql)) {
 		echo "New record created successfully !";
