@@ -1,0 +1,108 @@
+-- MySQL dump 10.13  Distrib 5.5.47, for debian-linux-gnu (i686)
+--
+-- Host: localhost    Database: house
+-- ------------------------------------------------------
+-- Server version	5.5.47-0+deb7u1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `blue`
+--
+
+DROP TABLE IF EXISTS `blue`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `blue` (
+  `Monday` int(11) DEFAULT NULL,
+  `Tuesday` int(11) DEFAULT NULL,
+  `THursday` int(11) DEFAULT NULL,
+  `Other` int(11) DEFAULT NULL,
+  `Week` int(11) DEFAULT NULL,
+  `total` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `blue`
+--
+
+LOCK TABLES `blue` WRITE;
+/*!40000 ALTER TABLE `blue` DISABLE KEYS */;
+INSERT INTO `blue` VALUES (NULL,NULL,NULL,NULL,11,NULL),(NULL,NULL,NULL,NULL,10,NULL),(NULL,NULL,NULL,NULL,9,NULL),(NULL,NULL,NULL,NULL,8,NULL),(NULL,NULL,NULL,NULL,7,NULL),(NULL,NULL,NULL,NULL,6,NULL),(NULL,NULL,NULL,NULL,5,NULL),(NULL,NULL,NULL,NULL,4,NULL),(NULL,42,78,NULL,3,120),(NULL,20,59,NULL,2,79),(NULL,NULL,NULL,NULL,1,5106);
+/*!40000 ALTER TABLE `blue` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orange`
+--
+
+DROP TABLE IF EXISTS `orange`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `orange` (
+  `Week` int(11) DEFAULT NULL,
+  `Monday` int(11) DEFAULT NULL,
+  `Tuesday` int(11) DEFAULT NULL,
+  `Thursday` int(11) DEFAULT NULL,
+  `Other` int(11) DEFAULT NULL,
+  `total` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orange`
+--
+
+LOCK TABLES `orange` WRITE;
+/*!40000 ALTER TABLE `orange` DISABLE KEYS */;
+INSERT INTO `orange` VALUES (1,NULL,NULL,NULL,NULL,5090),(2,NULL,23,45,NULL,68),(3,NULL,33,41,NULL,74),(4,NULL,NULL,NULL,NULL,NULL),(5,NULL,NULL,NULL,NULL,NULL),(6,NULL,NULL,NULL,NULL,NULL),(7,NULL,NULL,NULL,NULL,NULL),(8,NULL,NULL,NULL,NULL,NULL),(9,NULL,NULL,NULL,NULL,NULL),(11,NULL,NULL,NULL,NULL,NULL),(10,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `orange` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `white`
+--
+
+DROP TABLE IF EXISTS `white`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `white` (
+  `Week` int(11) DEFAULT NULL,
+  `Monday` int(11) DEFAULT NULL,
+  `Tuesday` int(11) DEFAULT NULL,
+  `Thursday` int(11) DEFAULT NULL,
+  `Other` int(11) DEFAULT NULL,
+  `total` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `white`
+--
+
+LOCK TABLES `white` WRITE;
+/*!40000 ALTER TABLE `white` DISABLE KEYS */;
+INSERT INTO `white` VALUES (11,NULL,NULL,NULL,NULL,NULL),(10,NULL,NULL,NULL,NULL,NULL),(9,NULL,NULL,NULL,NULL,NULL),(8,NULL,NULL,NULL,NULL,NULL),(7,NULL,NULL,NULL,NULL,NULL),(6,NULL,NULL,NULL,NULL,NULL),(5,NULL,NULL,NULL,NULL,NULL),(4,NULL,NULL,NULL,NULL,NULL),(3,NULL,41,50,NULL,91),(2,NULL,26,56,NULL,82),(1,NULL,NULL,NULL,NULL,5629);
+/*!40000 ALTER TABLE `white` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-06-07 10:25:47
