@@ -8,5 +8,7 @@ process.php - sql workings <br>
 house.sql - dump of the database structure
 
 
+https://licensebuttons.net/l/by/3.0/88x31.png
+
 
 
