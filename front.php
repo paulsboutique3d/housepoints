@@ -33,15 +33,15 @@ h2{
 include 'db.php' ;  //connect to DB
 
 
-//Total term for blue
+//Total term for blue Marungayu
 $sql = "SELECT SUM(IFNULL(Monday, 0) + IFNULL(Tuesday, 0) + IFNULL(Thursday, 0) + IFNULL(Other, 0)) AS termtotal from blue ";
 $ttb = $conn->query($sql);
 
-//Total term for orange
+//Total term for orange Tarnta
 $sql = "SELECT SUM(IFNULL(Monday, 0) + IFNULL(Tuesday, 0) + IFNULL(Thursday, 0) + IFNULL(Other, 0)) AS termtotal from orange ";
 $tto = $conn->query($sql);
 
-//total term White
+//total term White Wirltu
 $sql = "SELECT SUM(IFNULL(Monday, 0) + IFNULL(Tuesday, 0) + IFNULL(Thursday, 0) + IFNULL(Other, 0)) AS termtotal from white ";
 $ttw = $conn->query($sql);
 
@@ -64,14 +64,14 @@ echo '
 <table style="height: 600" width="auto">
 <tbody>
 <tr style="height: 15%; background-color: #6699cc;">
-<td style="width: 33%; height: 15%;"><h1 style="text-align: center;"><span style="color: #ffffff;"><strong>2021 HOUSE SHIELD</strong></span></h1></td>
+<td style="width: 33%; height: 15%;"><h1 style="text-align: center;"><span style="color: #ffffff;"><strong>2024 HOUSE SHIELD POINTS</strong></span></h1></td>
 <td style="width: 33%; height: 15%;">&nbsp;</td>
 <td style="width: 33%; height: 15%;"><h1 style="text-align: center;"><span style="color: #ffffff;"><strong>LEADER BOARD</strong></h1></td>
 </tr>
 <tr >
-<td style="width: 33%; background-color: orange; height: 25%;"><p style="text-align: center;"><span style="color: #ffffff;"><strong>ORANGE</strong</p></td>
-<td style="width: 33%; height: 25%;"><p style="text-align: center;"><strong>WHITE</strong></p></td>
-<td style="width: 33%; height: 25%; background-color: #003366;"><p style="text-align: center;"><span style="color: #ffffff;"><strong>BLUE</strong</p></td>
+<td style="width: 33%; background-color: orange; height: 25%;"><p style="text-align: center;"><span style="color: #ffffff;"><strong>TARNTA</strong</p></td>
+<td style="width: 33%; height: 25%;"><p style="text-align: center;"><strong>WIRLTU</strong></p></td>
+<td style="width: 33%; height: 25%; background-color: #003366;"><p style="text-align: center;"><span style="color: #ffffff;"><strong>MARUNGAYU</strong</p></td>
 </tr>
 <tr >
 <td style="width: 33%; background-color: orange; height: 45%;"><h2 style="text-align: center;"><span style="color: #ffffff;"><strong>';
